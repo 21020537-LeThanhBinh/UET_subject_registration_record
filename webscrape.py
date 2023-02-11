@@ -64,7 +64,7 @@ for semesterID in range(36, 24, -1):
         on_duplicate_key_stmt = insert_stmt.on_duplicate_key_update(insert_stmt.inserted)
         conn.execute(on_duplicate_key_stmt)
 
-    engine = create_engine('mysql+pymysql://root:Binh.191519@localhost/uet_student_data_01')
+    engine = create_engine('mysql+pymysql://root:pass@localhost/uet_student_data_01')
     # df.to_sql(con=engine, name='dangky_0'+str(semesterID), if_exists='append', index=False)
     df.to_sql(con=engine, name='dangky_0'+str(semesterID), if_exists='append', index=False, method=insert_on_duplicate)
 
